@@ -1,7 +1,8 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-module.exports =  (env)=>{
+module.exports =  (env, argv)=>{
+    console.log(argv.mode);
     return {
         entry: './src/index.js',
         module: {
@@ -32,6 +33,7 @@ module.exports =  (env)=>{
         devServer: {
             contentBase: './dist',
             port: 2200,
+            historyApiFallback: true,
             hot: true
         }
     }

@@ -1,0 +1,12 @@
+html, body{
+
+}
+body {
+    overflow: scroll;
+    background-color:#ffffff;
+}
+
+#app {
+    height:inherit;
+    background-color:inherit;
+}

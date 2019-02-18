@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const title = 'My Minimal aReact Webpack Babel Setup';
+const title = 'My Minimal aReact aWebpack Babel Setup';
 
 ReactDOM.render(
     <div>{title}</div>,

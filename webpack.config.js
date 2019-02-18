@@ -1,5 +1,6 @@
 const webpack = require('webpack');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports =  (env)=>{
     return {
         entry: './src/index.js',
@@ -21,10 +22,16 @@ module.exports =  (env)=>{
             filename: 'bundle.js'
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+            new CleanWebpackPlugin(['dist']),
+            new CopyWebpackPlugin([
+                {from: './src/index.html'},
+                {from: './src/assets', to: './assets'},
+            ]),
         ],
         devServer: {
             contentBase: './dist',
+            port: 2200,
             hot: true
         }
     }
